@@ -1,13 +1,14 @@
 
 import './App.css'
-import TodoList from './TodoList'
+import UseState from './components/UseState'
+
 
 function App() {
 
 
   return (
     <>
-     <TodoList/>
+    <UseState/>
     </>
   )
 }
