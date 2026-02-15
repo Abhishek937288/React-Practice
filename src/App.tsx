@@ -1,15 +1,7 @@
-
-import './App.css'
-import TodoList from './TodoList'
+import "./App.css";
 
 function App() {
-
-
-  return (
-    <>
-     <TodoList/>
-    </>
-  )
+  return <></>;
 }
 
-export default App
+export default App;
