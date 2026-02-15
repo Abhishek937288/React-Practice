@@ -1,27 +1,19 @@
-import  { useState, useMemo } from "react";
+import { useContext } from "react";
+import { UserContext } from "./context/userContext";
 
-function FactorialCalculator() {
-  const [number, setNumber] = useState(5);
-  const [counter, setCounter] = useState(0);
-
-  const factorial = useMemo(() => {
-    const computeFactorial = (n : number) => {
-      if (n <= 1) return 1;
-      return n * computeFactorial(n - 1);
-    };
-    return computeFactorial(number);
-  }, [number]);
-
+const TodoList = () => {
+  const context = useContext(UserContext);
+  if (!context) {
+    return <p> User is not provided</p>;
+  }
+  const { userData, setUserData } = context;
   return (
     <div>
-      <h2>
-        Factorial of {number} is {factorial}
-      </h2>
-      <button onClick={() => setNumber(number + 1)}>Increase Number</button>
-      <button onClick={() => setCounter(counter + 1)}>Increase Counter</button>
-      <p>Counter: {counter}</p>
+      TodoList
+      <p>{userData?.name}</p>
+      <button onClick={() => setUserData({ name: "ram" })}>change name</button>
     </div>
   );
-}
+};
 
-export default FactorialCalculator;
+export default TodoList;
