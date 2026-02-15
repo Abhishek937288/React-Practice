@@ -1,4 +1,4 @@
-import {  useEffect, useState,  } from "react";
+import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import { UserContext } from "./userContext";
 
@@ -9,8 +9,6 @@ interface userData {
 interface Props {
   children: ReactNode;
 }
-
-
 
 export const UserProvider = ({ children }: Props) => {
   const [userData, setUserData] = useState<userData | null>(null);
